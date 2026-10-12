@@ -1,0 +1,53 @@
+name: Feature / 功能建议
+description: 说明用户价值、目标范围及非目标。
+title: '[Feature] '
+body:
+- type: markdown
+  attributes:
+    value: 请先搜索已有 Issue。只提交可公开的信息；日志请脱敏。区分已验证事实、疑似问题与推测；没有证据或未执行测试时直接说明，不要编造。
+- type: dropdown
+  id: evidence_status
+  attributes:
+    label: Evidence Status / 证据状态
+    description: 选择当前已知状态；具体证据与推测分别写入下方。
+    options:
+    - VERIFIED / 已验证
+    - SUSPECTED / 疑似，尚未验证
+    - UNKNOWN / 信息不足
+  validations:
+    required: true
+- type: textarea
+  id: objective
+  attributes:
+    label: Objective / 目标与用户价值
+    description: 谁遇到了什么问题？完成后获得什么价值？
+  validations:
+    required: true
+- type: textarea
+  id: scope
+  attributes:
+    label: Scope / 范围与非目标
+    description: 分别列出 In Scope 与 Non-Goals，避免隐含扩大范围。
+  validations:
+    required: true
+- type: textarea
+  id: evidence
+  attributes:
+    label: Evidence / 证据与推测
+    description: 给出日志、截图、数据或代码链接，并注明版本。分别标注 FACT、SUSPECTED、HYPOTHESIS；没有证据请写“暂无 / NOT_RUN”。
+  validations:
+    required: false
+- type: textarea
+  id: acceptance_criteria
+  attributes:
+    label: Acceptance Criteria / 验收标准
+    description: 描述可观察、可测试的完成条件；不要求现在已有测试结果。
+  validations:
+    required: true
+- type: textarea
+  id: constraints
+  attributes:
+    label: Constraints / 约束
+    description: 兼容性、性能、安全、时限及不可修改的范围；无已知约束可留空。
+  validations:
+    required: false

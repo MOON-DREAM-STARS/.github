@@ -1,0 +1,60 @@
+name: Bug / 问题报告
+description: 报告已验证或疑似缺陷，提供复现信息。
+title: '[Bug] '
+body:
+- type: markdown
+  attributes:
+    value: 请先搜索已有 Issue。只提交可公开的信息；日志请脱敏。区分已验证事实、疑似问题与推测；没有证据或未执行测试时直接说明，不要编造。
+- type: dropdown
+  id: evidence_status
+  attributes:
+    label: Evidence Status / 证据状态
+    description: 选择当前已知状态；具体证据与推测分别写入下方。
+    options:
+    - VERIFIED / 已验证
+    - SUSPECTED / 疑似，尚未验证
+    - UNKNOWN / 信息不足
+  validations:
+    required: true
+- type: textarea
+  id: problem
+  attributes:
+    label: Problem / 问题与目标
+    description: 实际行为、期望行为及影响；只将观察到的行为写为事实。
+  validations:
+    required: true
+- type: textarea
+  id: reproduction
+  attributes:
+    label: Reproduction / 复现步骤
+    description: 最小步骤、输入与复现频率；无法复现请明确说明。
+  validations:
+    required: false
+- type: textarea
+  id: environment
+  attributes:
+    label: Environment / 环境
+    description: 版本或 Commit、系统、运行时、相关配置；不要提交凭证。
+  validations:
+    required: false
+- type: textarea
+  id: evidence
+  attributes:
+    label: Evidence / 证据与推测
+    description: 给出日志、截图、数据或代码链接，并注明版本。分别标注 FACT、SUSPECTED、HYPOTHESIS；没有证据请写“暂无 / NOT_RUN”。
+  validations:
+    required: false
+- type: textarea
+  id: acceptance_criteria
+  attributes:
+    label: Acceptance Criteria / 验收标准
+    description: 描述可观察、可测试的完成条件；不要求现在已有测试结果。
+  validations:
+    required: true
+- type: textarea
+  id: constraints
+  attributes:
+    label: Constraints / 约束
+    description: 兼容性、性能、安全、时限及不可修改的范围；无已知约束可留空。
+  validations:
+    required: false
