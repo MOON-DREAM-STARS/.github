@@ -28,6 +28,10 @@ Issue 正文记录需求；获授权的 Planner 在评论中制定带版本的�
 
 维护者合并后，应在一个没有本地模板的现有项目中打开 New issue / New pull request 页面确认展示；本仓库不擅自修改其他项目进行验证。
 
+## 可选的统一 Code Review 指南
+
+公开的 [REVIEW_GUIDELINES.md](REVIEW_GUIDELINES.md) 集中维护跨仓库通用审查重点、证据要求及**可选**的单个 Subagent Review 偏好（`gpt-6-luna` / `max`）。它是供人工引用或自建 Reviewer 明确加载的共享资料，**不属于 GitHub 自动继承的社区健康文件**，也不会让原生 `@codex review` 自动换模型、调整推理强度或调用子代理。请参照该文件内的 GitHub 评论使用示例；仓库本地 `AGENTS.md` 仍是 Codex 原生审查规则的受支持入口。
+
 ## 公开安全
 
 不提交凭证、个人数据、私有架构、内部指令或敏感日志。报告漏洞时不要在公开 Issue 暴露可利用细节；先使用受影响项目指定的私密报告渠道。
