@@ -29,6 +29,9 @@
 
 ## Review Focus
 <!-- 希望维护者重点检查的实现、测试或安全边界。 -->
+<!-- 可选的账户级共享审查提示词：
+https://github.com/MOON-DREAM-STARS/.github/blob/main/REVIEW_GUIDELINES.md
+此链接不会被原生 Codex Review 自动继承或强制选择模型；适用时需手动请求读取。 -->
 
 ## Agent Run ID
 <!-- AI 执行时填写 Run ID；人工改动填写 N/A。 -->
