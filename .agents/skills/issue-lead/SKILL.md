@@ -39,7 +39,7 @@ description: 自主负责一个已分派 Issue 的实施、修复或优化，管
 
 ## Review
 
-稳定候选优先 @codex review；已有有效当前候选审查则复用。记录完成状态、head/base 和 findings；请求已发送、reaction 或 pending 不是完成，不高频催审。
+稳定候选优先原生 Codex review；创建 PR 或更新候选后先读取当前 head 的审查活动，已有有效结果则复用，正在运行则等待。没有适用结果或进行中请求时才发送一次 @codex review，避免与自动审查重复。记录完成状态、head/base 和 findings；请求已发送、reaction 或 pending 不是完成，不高频催审。普通状态评论仅引用审查链接，不重复 @ 提及 bot。
 
 用户已授权且存在明确、适用的额度耗尽证据时，自主调用未参与实现的 subsubagent reviewer，无需再次申请。无此授权或非配额错误时向主 agent 报告，继续不受影响工作。不能把 changes requested 当作额度问题。
 

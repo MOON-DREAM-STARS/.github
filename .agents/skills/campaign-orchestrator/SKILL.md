@@ -54,7 +54,7 @@ report_to: <主 agent 身份>
 
 执行共享协议的最小验证规则。子负责人是证据负责人，reviewer 只针对疑点复现，你不默认重跑测试或再做一遍完整代码 review。必要全量集中在稳定候选，不重复等价 full/ci。旧强制门禁若需缩减，在授权内协调契约迁移，生效前如实保留阻塞。
 
-优先 @codex review。只有有真实配额耗尽证据且用户已授权回退时，子负责人可自主调用未参与实现的 subsubagent reviewer。回退不冒充原生 approval，不自动满足 required check；不固定或伪称运行模型。pending、网络错误和审查 findings 不触发配额回退。
+优先原生 Codex review，先查当前 head 是否已有有效结果或进行中的审查，避免 PR 自动审查和显式 @codex review 重复触发。只有有真实配额耗尽证据且用户已授权回退时，子负责人可自主调用未参与实现的 subsubagent reviewer。回退不冒充原生 approval，不自动满足 required check；不固定或伪称运行模型。pending、网络错误和审查 findings 不触发配额回退。
 
 收到 [PR 交付记录](../../../.github/comment-templates/pr-delivery.md) 后检查：范围、依赖、验收、证据适用性、review findings、真实保护状态和用户合并授权。符合条件时，由你执行普通合并，禁止后代 merge/auto-merge 或绕过保护。合并决定绑定 head/base，变化后重新评估。用户已授权时不逐 PR 再次确认；未授权时先完成可审查结果再请求决定。
 
