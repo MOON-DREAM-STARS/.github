@@ -6,10 +6,10 @@
 - Type: <CONTRACT_CHANGE / SCOPE_CHANGE / MERGE>
 - Issue / PR: <链接>
 - PLAN Revision: <适用版本及链接>
-- State: <REQUESTED / APPROVED / REJECTED / SUPERSEDED>
+- State: <REQUESTED / APPROVED / REJECTED / SUPERSEDED / REVOKED>
 - Actor: <申请者或实际决策者>
 - Authority: <可信授权来源；申请不等于获准>
-- Related Record: <所回复的申请或被替代决定链接；首次申请写 None>
+- Related Record: <所回复的申请、被替代或被撤销决定链接；首次申请写 None>
 - Agent Run ID: <本次执行标识>
 - Recorded: <带时区的 ISO 8601>
 
@@ -23,7 +23,7 @@
 <最小必要验证与恢复方式；不适用须说明>
 
 ### Decision
-<待决定写 Pending；已决定写允许/拒绝范围、条件、决策者及依据>
+<待决定写 Pending；已决定写允许/拒绝范围、条件、决策者及依据；撤销须明确失效范围和生效时间>
 
 ### Validity
 <绑定的 PLAN/契约版本、候选 head/base，以及失效或重新评估条件>
