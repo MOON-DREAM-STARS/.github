@@ -18,7 +18,7 @@ Issue 正文记录需求；获授权的 Planner 在评论中制定带版本的�
 
 [评论协议与模板](.github/comment-templates/README.md) 规定：一个有界实施 Issue 对应一个负责人和一个 PR；Issue/PR 各维护一条当前状态评论，PLAN 与敏感决定按版本留痕。验证按影响选择，已有证据合理复用，不为多个角色重复跑全量。
 
-两份可选的 Codex 技能：[campaign-orchestrator](.agents/skills/campaign-orchestrator/SKILL.md) 负责计划、派发和敏感决定；[issue-lead](.agents/skills/issue-lead/SKILL.md) 负责单 Issue 完整交付，必要时管理 subsubagent。优先 `@codex review`；只有用户预先授权且存在明确配额耗尽证据时才自主使用独立子代理回退。既有保护和验收不会自动变化。
+两份可选的 Codex 技能：[campaign-orchestrator](.agents/skills/campaign-orchestrator/SKILL.md) 负责计划、派发和敏感决定；[issue-lead](.agents/skills/issue-lead/SKILL.md) 负责单 Issue 完整交付，必要时管理 subsubagent。优先原生 Codex review：先检查当前 head 的已有结果和审查活动，有效结果直接复用，正在运行则等待；没有适用结果或进行中请求时才发送一次 `@codex review`。只有用户预先授权且存在明确配额耗尽证据时才自主使用独立子代理回退。既有保护和验收不会自动变化。
 
 使用时在支持 skills 的客户端显式加载对应技能。需要安装到目标项目时，先比较已有文件，再按项目授权复制这两个技能目录及 `.github/comment-templates/`，或在派发时明确指定账户级协议的固定 commit；不要覆盖目标项目整个 `.github` 或原有模板。主线程调用 `$campaign-orchestrator`，给 Issue 子负责人派发 `$issue-lead` 及具体授权包。
 
