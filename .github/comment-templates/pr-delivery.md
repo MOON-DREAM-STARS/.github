@@ -38,4 +38,18 @@ None / <剩余动作、required checks、未知保护状态、负责人和 block
 ### Requested Action
 None / <需要主 agent 作出的具体决定及申请链接>
 
-<!-- 实际合并后在 Acceptance/Evidence 中记录落地 SHA 与适用的后续验证，再使用 DONE。 -->
+### Completion and Cleanup
+- Merge: <未合并；或 PR merged、merge SHA、最终目标落地证据>
+- Post-merge Verification: <待执行；或必要检查结果/证据复用依据>
+- Cleanup Authority: <授权依据、资源范围及保留项；无权限写 DEFERRED>
+
+| Resource | Repository / Ref or Path / Tip | Owner | Status | Evidence / Recovery | Blocker / Trigger / Next Action |
+| --- | --- | --- | --- | --- | --- |
+| Remote branch | <仓库、remote、完整 ref、删除前 SHA> | <主 agent> | PENDING | <读回与恢复来源> | <阻塞、重查触发及下一步；无则 None> |
+| Local branch | <环境/仓库、完整 ref、删除前 SHA> | <资源 owner> | PENDING | <读回与恢复来源> | <阻塞、重查触发及下一步；无则 None> |
+| Temporary worktree | <环境/仓库、worktree、branch/HEAD> | <资源 owner> | PENDING | <内容/消费者核验、移除读回、证据保存位置> | <阻塞、重查触发及下一步；无则 None> |
+
+<!-- 按实际资源逐行登记，包括后代资源；没有该类资源写 N/A 和具体理由。
+清理 Status 仅用 PENDING/CLEANED/DEFERRED/N/A，不与测试 PASS/FAIL/NOT_RUN 混用。
+所有适用资源收尾、实际落地及必要验收满足后才 DONE；细则见 pr-completion.md。
+公开评论的环境/path 使用无敏感信息的标识，必要完整定位保存在获授权的证据位置。 -->
