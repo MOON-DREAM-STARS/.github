@@ -22,6 +22,11 @@
 ### Dependencies and Ownership
 <前置证据、子负责人、共享文件唯一 owner、主 branch/worktree、子代理与资源预算>
 
+### Cleanup Ownership and Scope
+<真实授权依据；主 agent 负责远端删除，本地资源 owner 负责本地分支/专用 worktree；
+仓库/remote/ref/path 与登记位置、保留项、消费者、待删 worktree 外的恢复和证据位置。
+跨机器逐项指定 owner；无权限不得从 PLAN 推导授权。>
+
 ### Implementation Steps
 <有限步骤；范围内技术细节由子负责人决定，无需逐项重新申请>
 
@@ -29,4 +34,5 @@
 <必要检查、全量触发条件、证据复用依据、Codex 优先及配额回退授权状态>
 
 ### Completion and Pause Conditions
-<停止扩展与申请合并的条件；阻塞时仅暂停受影响动作；合并权限来源>
+<停止扩展与申请合并的条件、合并权限来源；实际落地/必要验收及逐项清理后才 DONE；
+延期清理的 owner 与重查触发；阻塞只暂停受影响动作，继续其他已授权就绪任务>

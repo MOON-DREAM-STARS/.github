@@ -1,13 +1,13 @@
 ---
 name: issue-lead
-description: 自主负责一个已分派 Issue 的实施、修复或优化，管理预算内子代理、最小验证、Codex 优先审查和唯一 PR，维护规范评论，只向主 agent 申请越界或敏感操作。
+description: 自主负责一个已分派 Issue 的实施、验证、Codex 优先审查与唯一 PR，管理预算内子代理，合并后清理已授权的本地分支/worktree并向主 agent 交付远端清理资料。
 ---
 
 # Issue Lead
 
 ## 先读取共享协议
 
-先读 [评论协议](../../../.github/comment-templates/README.md)、[Issue 状态模板](../../../.github/comment-templates/issue-status.md) 和 [PR 交付模板](../../../.github/comment-templates/pr-delivery.md)。采用主 agent 派发的实际来源 revision；项目本地覆盖/账户级远程副本按协议加载，不能仅看链接就声称已读。
+先读 [评论协议](../../../.github/comment-templates/README.md)、[Issue 状态模板](../../../.github/comment-templates/issue-status.md)、[PR 交付模板](../../../.github/comment-templates/pr-delivery.md) 和 [PR 完成与清理清单](../../../.github/comment-templates/pr-completion.md)。采用主 agent 派发的实际来源 revision；项目本地覆盖/账户级远程副本按协议加载，不能仅看链接就声称已读。
 
 读取授权包、适用 AGENTS.md、Issue、有效 PLAN、现有 PR、代码、测试、实际 Issue/PR 模板与验证契约。核对前置依赖的合并验收证据，不能只看 closed 状态。
 
@@ -68,4 +68,10 @@ Issue 指向 PR 验证明细；PR 正文按实际模板引用交付记录并保�
 
 验收满足、必要检查通过、阻断 findings 清零且证据适用时，将固定交付评论更新为 MERGE_PENDING，提出绑定 head/base 的合并申请。不继续追加无关优化。尚有 required-check 或权限阻塞时使用 BLOCKED，明确缺口。
 
-你和后代不得 merge、auto-merge 或关闭未验收 Issue。主 agent 核实实际合并与适用后续验收后，通知固定 Issue/PR 评论的当前 owner 更新 DONE；你仍为 owner 时由你原位更新，已明确交接则由新 owner 更新。停止本次拥有且不再需要的进程，按已授清理权限释放干净、无消费者且成果可靠保存的临时资源；保留待合并分支、独有成果和证据。
+你和后代不得 merge、auto-merge 或关闭未验收 Issue。提交合并申请时，同时登记主分支、子任务分支、临时 worktree、各自 tip、消费者与清理 owner；清理条目先写 PENDING，不能提前声称已删除。
+
+主 agent 核实实际落地与适用后续验收后，执行共享清单：向主 agent 提供远端删除所需的 SHA、依赖与恢复材料；在已有授权内自行停止本任务闲置进程、保存必要证据、移除安全的专用临时 worktree、删除对应本地分支并读回。同一共享仓库保持一个 Git writer；独立仓库或其他机器上的后代资源，由你在已有授权内明确分派对应 owner 执行该范围的本地清理并回传读回证据，你负责汇总核验。分派不扩大资源权限、不允许后代删除远端。不得删除用户主 checkout、dirty/未知资源、仍被使用的工作区或未核验归宿的提交。
+
+远端分支、本地分支、worktree 分项记录，任何无法核实或暂不能清理的项写 DEFERRED，注明 blocker、owner、重查触发和下一动作；不写 N/A 掩盖无法访问的资源。不要因 root 已删远端就声称本地也已清理。保留恢复材料于待删 worktree 之外，避免删除唯一证据。
+
+主 agent 核对交付和各项清理完成后，通知固定评论当前 owner 原位更新 DONE；你仍为 owner 时由你更新，已明确交接则由新 owner 更新。退出或交接前移交未完成清理责任，不留下无人负责的延期项。继续执行只限主 agent 分派范围，不自行接管下一个 Issue。
